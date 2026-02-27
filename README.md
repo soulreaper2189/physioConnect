@@ -1,47 +1,162 @@
-# Running the Healthcare Platform Locally
+# 🏥 PhysioConnect -- Physiotherapy & Rehabilitation Tracking Platform
 
-This document explains how to test the frontend and backend for the Healthcare project on your local machine.
+A Full-Stack PERN Application enabling secure remote physiotherapy
+tracking, doctor-patient collaboration, and structured rehabilitation
+monitoring.
+
+------------------------------------------------------------------------
+
+## 📌 Problem Statement
+
+Traditional physiotherapy systems face major challenges:
+
+-   Lack of real-time communication between doctor and patient
+-   No structured remote exercise assignment tracking
+-   Poor rehabilitation progress monitoring
+-   No centralized feedback system
+-   Manual documentation inefficiency
+-   Difficulty managing multiple patient recovery plans
+
+------------------------------------------------------------------------
+
+## 💡 Solution
+
+PhysioConnect solves these issues by providing:
+
+-   Secure JWT-based authentication
+-   Doctor Portal
+-   Patient Portal
+-   6-digit alphanumeric doctor connection code system
+-   Exercise assignment tracking
+-   Pain logging & progress visualization
+-   Real-time doctor-patient data sync
+
+Doctors can assign exercises, monitor progress, and review recovery logs
+--- while patients can complete exercises and track improvement
+digitally.
+
+------------------------------------------------------------------------
+
+## 🏗️ Tech Stack
+
+### Frontend
+
+-   React (Vite)
+-   Axios
+-   Context API
+-   Drag & Drop UI
+
+### Backend
+
+-   Node.js
+-   Express.js
+-   PostgreSQL
+-   JWT Authentication
+-   bcrypt (password hashing)
+-   nodemon (development)
+
+### Architecture
+
+-   PERN Stack (PostgreSQL, Express, React, Node)
+-   Concurrently (run frontend & backend together)
+
+------------------------------------------------------------------------
+
+# 🚀 Running the Project Locally
 
 ## Prerequisites
-- Node.js (v16+)
-- PostgreSQL Database
-- Ensure the backend `.env` is configured correctly with your database credentials.
 
-## Step 1: Initialize the Database (If not already done)
-The `assigned_exercises` feature requires a small schema update. To ensure it exists, please run the SQL statements found in `backend/db/schema.sql` within your Postgres database tool (like pgAdmin or `psql`).
+-   Node.js (v16+)
+-   PostgreSQL installed
+-   Database created
+-   Backend .env configured
 
-## Step 2: Start the Backend (API)
-The backend requires nodemon. Ensure you have installed the dependencies first.
-1. Open a terminal.
-2. Navigate to the backend directory:
-   ```bash
-   cd c:/Users/likhi/Desktop/healthcare/backend
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-   > The server should start on `http://localhost:5000`.
+Example .env:
 
-## Step 3: Start the Frontend (React APP)
-The React app uses Vite and needs its own terminal to run concurrently with the backend.
-1. Open a **new** terminal window.
-2. Navigate to the frontend directory:
-   ```bash
-   cd c:/Users/likhi/Desktop/healthcare/frontend
-   ```
-3. Start the Vite development server:
-   ```bash
-   npm run dev
-   ```
-   > The frontend should start, typically on `http://localhost:5173`. Open this URL in your browser.
+PORT=5000 DATABASE_URL=your_postgres_connection_string
+JWT_SECRET=your_secret_key
 
-## Step 4: Testing the Flow
-To test the complete workflow involving AI, Doctor, and Patient routing:
+------------------------------------------------------------------------
 
-1. **Register a Doctor:** Go to `/register` and create an account, making sure to select **Doctor**.
-2. **Register a Patient:** Open an incognito window or log out, then go to `/register` and create a second account, selecting **Patient**.
-3. **Doctor Assignment:** Login as the **Doctor**. You should see the patient listed. Drag an exercise from the right panel and drop it onto the patient's card. You will see a success notification.
-4. **Patient View:** Login as the **Patient**. You should see the newly assigned exercise on your dashboard.
-5. **Log Progress:** As the patient, use the form to log a pain level and notes.
-6. **Chart & Reflection:** Once you log progress, it will show up on your chart. Switch back to the Doctor account and you will be able to click on that patient to see their new logs appear instantly.
+## 🗄️ Step 1 -- Initialize Database
+
+Run the SQL statements inside:
+
+backend/db/schema.sql
+
+Using pgAdmin, psql, or any PostgreSQL tool.
+
+------------------------------------------------------------------------
+
+## ⚡ Step 2 -- Install Dependencies (Root Folder)
+
+From the main project directory:
+
+npm install
+
+------------------------------------------------------------------------
+
+## ▶ Step 3 -- Run Full Application
+
+This project uses concurrently. Start both frontend and backend with:
+
+npm run dev
+
+Backend runs on: http://localhost:5000
+
+Frontend runs on: http://localhost:5173
+
+------------------------------------------------------------------------
+
+# 🧪 Testing Workflow
+
+1.  Register a Doctor (/register → select Doctor)
+2.  Register a Patient (incognito window → select Patient)
+3.  Doctor logs in and assigns exercises
+4.  Patient logs progress and pain levels
+5.  Doctor monitors progress updates instantly
+
+------------------------------------------------------------------------
+
+# 🔐 Security Features
+
+-   JWT Authentication
+-   Role-based Authorization
+-   Password hashing (bcrypt)
+-   Protected API routes
+-   Secure doctor-patient linking
+
+------------------------------------------------------------------------
+
+# 📈 Real-World Problems This Solves
+
+-   Remote patient monitoring
+-   Post-surgery rehabilitation tracking
+-   Chronic pain management
+-   Sports injury recovery tracking
+-   Rural healthcare accessibility
+-   Hospital workload optimization
+
+------------------------------------------------------------------------
+
+# 📂 Project Structure
+
+healthcare/ │ ├── backend/ ├── frontend/ ├── package.json (root -
+concurrently config) └── README.md
+
+------------------------------------------------------------------------
+
+# 🌟 Future Improvements
+
+-   AI-based posture detection
+-   Real-time chat via WebSockets
+-   Advanced analytics dashboard
+-   Cloud deployment
+-   Mobile app version
+
+------------------------------------------------------------------------
+
+# 👨‍💻 Developed By
+
+Likhith Sai Vinnakota\
+Computer Science Student \| Full Stack Developer
