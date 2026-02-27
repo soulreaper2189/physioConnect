@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #201A32;
+  --color-brand-card: #2A2342;
+  --color-brand-card-hover: #352B52;
+  --color-brand-border: #3D355C;
+  --color-brand-accent: #6D28D9;
+  /* purple-600 equivalent */
+  --color-brand-accent-hover: #5B21B6;
+  /* purple-700 equivalent */
+  --color-brand-text-main: #F3F4F6;
+  --color-brand-text-muted: #A78BFA;
+  /* purple-400 */
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text-main);
+  /* Apply a default font stack */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-card-hover);
+}
