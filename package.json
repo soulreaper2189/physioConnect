@@ -1,13 +1,13 @@
 {
-  "homepage": "https://github.com/soulreaper2189/physioConnect",
+  "homepage": "https://soulreaper2189.github.io/physioConnect",
   "name": "healthcare",
   "version": "1.0.0",
   "description": "This document explains how to test the frontend and backend for the Healthcare project on your local machine.",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build --prefix frontend",
+    "deploy": "gh-pages -d frontend/dist"
   },
   "keywords": [],
   "author": "",
